@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #e8edf7;
+  background-color: #0f172a;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.12), transparent 22%),
+    radial-gradient(circle at 80% 0%, rgba(251, 191, 36, 0.16), transparent 20%),
+    #0f172a;
+}
+
+.theme-dark {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.12), transparent 22%),
+    radial-gradient(circle at 80% 0%, rgba(251, 191, 36, 0.16), transparent 20%),
+    #0f172a;
+  color: #e8edf7;
+}
+
+.theme-light {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.16), transparent 22%),
+    radial-gradient(circle at 80% 0%, rgba(251, 191, 36, 0.16), transparent 20%),
+    #f5f7fb;
+  color: #0b1223;
+}
+
+.panel {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.theme-light .panel {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+.theme-light .chip {
+  border-color: rgba(0, 0, 0, 0.08);
+  background: #f7f9fc;
+  color: #0b1223;
+}
+
+.theme-light .chip:hover {
+  border-color: rgba(0, 0, 0, 0.16);
+  background: #eef2f7;
+}
+
+.theme-light textarea,
+.theme-light #preview {
+  background: #f3f6fb;
+  border-color: rgba(0, 0, 0, 0.06);
+  color: #0b1223;
+}
+
+.theme-light #preview {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+}
+
+.theme-light #preview code,
+.theme-light #preview pre {
+  background: #e8edf5;
+  border-color: rgba(0, 0, 0, 0.06);
+  color: #0b1223;
+}
+
+.theme-light .panel {
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.theme-light {
+  color: #0b1223;
+  background-color: #f5f7fb;
+  background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.12), transparent 22%),
+    radial-gradient(circle at 80% 0%, rgba(251, 191, 36, 0.16), transparent 20%),
+    #f5f7fb;
+}
+
+code,
+pre,
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+.theme-light .preview-block {
+  background: #f7f9fc;
+}
