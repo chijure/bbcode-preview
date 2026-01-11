@@ -12,10 +12,12 @@ const PreviewPanel = ({ title, subtitle, safeNote, content }: Props) => (
         <p className="text-xs uppercase tracking-[0.2em] text-cyan-200">{title}</p>
         <h2 className="text-xl font-semibold">{subtitle}</h2>
       </div>
-      <div className="flex items-center gap-2 text-slate-300 text-sm">
-        <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-amber-400 to-cyan-300" />
-        {safeNote}
-      </div>
+      {safeNote ? (
+        <div className="flex items-center gap-2 text-slate-300 text-sm">
+          <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-amber-400 to-cyan-300" />
+          {safeNote}
+        </div>
+      ) : null}
     </div>
     <div
       id="preview"

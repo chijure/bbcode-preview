@@ -111,7 +111,7 @@ function App() {
           onChange={setInput}
           onInsert={insertTag}
         />
-        <PreviewPanel title={t('preview')} subtitle={t('rendered_html')} safeNote={t('safe_output')} content={preview} />
+        <PreviewPanel title={t('preview')} subtitle={t('rendered_html')} safeNote="" content={preview} />
       </main>
 
       <SupportPanel
