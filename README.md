@@ -23,6 +23,13 @@ npm run build
 ```
 El resultado queda en `dist/`.
 
+## GitHub Pages
+- Ajusta `base` en `vite.config.ts` si el nombre del repo cambia (por defecto `/bbcode-preview/`).
+- Pages usa GitHub Actions (`.github/workflows/deploy.yml`):
+  - `npm ci` + `npm run build` con Node 18, caché npm.
+  - `actions/configure-pages`, `upload-pages-artifact`, `deploy-pages`.
+- Fuente de Pages: habilita GitHub Pages -> Build and deployment -> Source: GitHub Actions.
+
 ## Funcionalidad
 - Código en TypeScript.
 - Editor de BBCode con chips para insertar etiquetas rápidas.
