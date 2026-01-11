@@ -1,6 +1,6 @@
 # BBCode Preview (React + Vite + Tailwind + TS)
 
-Vista previa de BBCode en tiempo real usando React 18, Tailwind 3 y Vite. Listo para desplegar en GitHub Pages.
+Vista previa de BBCode en tiempo real usando React 18, Tailwind 3 y Vite.
 
 ## Requisitos
 - Node 18+
@@ -22,11 +22,6 @@ Abrir la URL que imprime Vite (ej. `http://localhost:5173`).
 npm run build
 ```
 El resultado queda en `dist/`.
-
-## Despliegue en GitHub Pages
-1. Ajusta `base` en `vite.config.js` si el nombre del repo no es `bbcode-preview`.
-2. Ejecuta `npm run build`.
-3. Publica el contenido de `dist/` en Pages (rama `gh-pages` o flujo de tu preferencia).
 
 ## Funcionalidad
 - Código en TypeScript.
