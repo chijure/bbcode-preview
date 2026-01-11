@@ -44,6 +44,21 @@ body {
   border-color: rgba(0, 0, 0, 0.06);
 }
 
+.toolbar-btn {
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease, color 0.15s ease;
+}
+
+.theme-light .toolbar-btn {
+  border-color: rgba(0, 0, 0, 0.08);
+  background: #f7f9fc;
+  color: #0b1223;
+}
+
+.theme-light .toolbar-btn:hover {
+  border-color: rgba(0, 0, 0, 0.16);
+  background: #eef2f7;
+}
+
 .theme-light .chip {
   border-color: rgba(0, 0, 0, 0.08);
   background: #f7f9fc;

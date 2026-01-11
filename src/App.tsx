@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { chips, languages, sample, type LanguageId } from './constants'
+import { languages, sample, toolbarButtons, type LanguageId } from './constants'
 import EditorPanel from './components/EditorPanel'
 import LanguageSwitch from './components/LanguageSwitch'
 import PreviewPanel from './components/PreviewPanel'
@@ -33,11 +33,18 @@ function App() {
     const templates: Record<TagKey, string> = {
       bold: `[b]${selected || 'texto'}[/b]`,
       italic: `[i]${selected || 'texto'}[/i]`,
+      underline: `[u]${selected || 'texto'}[/u]`,
+      strike: `[s]${selected || 'texto'}[/s]`,
       link: `[url=${selected ? 'https://example.com' : 'https://example.com'}]${selected || 'enlace'}[/url]`,
       image: `[img]https://placekitten.com/400/240[/img]`,
       quote: `[quote=${selected || 'Autor'}]${selected || 'Texto citado'}[/quote]`,
       code: `[code]const hello = "world";[/code]`,
       list: `[list][*]Item 1[*]Item 2[/list]`,
+      color: `[color=#00bcd4]${selected || 'texto'}[/color]`,
+      size: `[size=18]${selected || 'texto grande'}[/size]`,
+      center: `[center]${selected || 'texto centrado'}[/center]`,
+      left: `[left]${selected || 'texto alineado a la izquierda'}[/left]`,
+      right: `[right]${selected || 'texto alineado a la derecha'}[/right]`,
     }
 
     const snippet = templates[tag] || ''
@@ -104,7 +111,7 @@ function App() {
         <EditorPanel
           title={t('editor')}
           subtitle={t('write_bbcode')}
-          chips={chips}
+          buttons={toolbarButtons}
           textareaRef={textareaRef}
           value={input}
           placeholder={t('placeholder')}

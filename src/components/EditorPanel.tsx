@@ -1,12 +1,12 @@
 import type { ChangeEvent, RefObject } from 'react'
-import type { ChipConfig } from '../constants'
+import type { ButtonConfig } from '../constants'
 import type { TagKey } from '../utils/bbcode'
-import TagChip from './TagChip'
+import ToolbarButton from './ToolbarButton'
 
 type Props = {
   title: string
   subtitle: string
-  chips: ChipConfig[]
+  buttons: ButtonConfig[]
   textareaRef: RefObject<HTMLTextAreaElement | null>
   value: string
   placeholder: string
@@ -14,16 +14,16 @@ type Props = {
   onInsert: (tag: TagKey) => void
 }
 
-const EditorPanel = ({ title, subtitle, chips, textareaRef, value, placeholder, onChange, onInsert }: Props) => (
+const EditorPanel = ({ title, subtitle, buttons, textareaRef, value, placeholder, onChange, onInsert }: Props) => (
   <section className="panel bg-slate-900/60 border border-white/5 rounded-2xl shadow-xl p-4 space-y-3">
     <div className="flex items-center justify-between flex-wrap gap-3">
       <div>
         <p className="text-xs uppercase tracking-[0.2em] text-cyan-200">{title}</p>
         <h2 className="text-xl font-semibold">{subtitle}</h2>
       </div>
-      <div className="flex gap-2 flex-wrap">
-        {chips.map(({ key, label }) => (
-          <TagChip key={key} label={label} onClick={() => onInsert(key)} />
+      <div className="flex gap-2 flex-wrap border border-white/10 bg-white/5 rounded-lg px-2 py-1">
+        {buttons.map(({ key, label, title: hint }) => (
+          <ToolbarButton key={key} label={label} title={hint} onClick={() => onInsert(key)} />
         ))}
       </div>
     </div>

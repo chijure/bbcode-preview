@@ -17,7 +17,7 @@ describe('App', () => {
     const textarea = screen.getByRole('textbox') as HTMLTextAreaElement
     fireEvent.change(textarea, { target: { value: 'texto' } })
     textarea.setSelectionRange(0, 5)
-    await userEvent.click(screen.getByText('[b]'))
+    await userEvent.click(screen.getByRole('button', { name: 'B' }))
     expect(textarea.value.startsWith('[b]')).toBe(true)
     await userEvent.click(screen.getByRole('button', { name: /Limpiar/i }))
     expect(textarea.value).toBe('')

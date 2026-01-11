@@ -1,4 +1,18 @@
-export type TagKey = 'bold' | 'italic' | 'link' | 'image' | 'quote' | 'code' | 'list'
+export type TagKey =
+  | 'bold'
+  | 'italic'
+  | 'underline'
+  | 'strike'
+  | 'link'
+  | 'image'
+  | 'quote'
+  | 'code'
+  | 'list'
+  | 'color'
+  | 'size'
+  | 'center'
+  | 'left'
+  | 'right'
 
 const escapeHtml = (str: string) =>
   str
